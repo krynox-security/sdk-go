@@ -1,3 +1,3 @@
-module gitlab.com/krynox/captcha/sdk-go
+module github.com/krynox-security/sdk-go
 
 go 1.21

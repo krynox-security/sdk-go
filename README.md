@@ -3,11 +3,11 @@
 Official Go server-side verification SDK for **Krynox Captcha**.
 
 ```bash
-go get gitlab.com/krynox/captcha/sdk-go
+go get github.com/krynox-security/sdk-go
 ```
 
 ```go
-import krynox "gitlab.com/krynox/captcha/sdk-go"
+import krynox "github.com/krynox-security/sdk-go"
 
 client := krynox.New(os.Getenv("KRYNOX_SECRET"))
 

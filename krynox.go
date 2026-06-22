@@ -19,7 +19,7 @@ import (
 	"time"
 )
 
-const defaultEndpoint = "https://captcha.krynox.id/siteverify"
+const defaultEndpoint = "https://api.krynox.id/siteverify"
 
 // Result is the outcome of a verification.
 type Result struct {
