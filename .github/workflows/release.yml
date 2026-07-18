@@ -1,0 +1,21 @@
+name: Release
+
+# Go modules are consumed straight from the git tag (no registry). On a version tag this validates
+# the module and cuts a GitHub release so `go get <module>@vX.Y.Z` resolves. No secrets needed.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+      - run: go build ./... && go vet ./... && go test ./...
+      - uses: softprops/action-gh-release@v2
