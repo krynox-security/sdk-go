@@ -44,6 +44,8 @@ type Result struct {
 	Risk        string   `json:"risk"` // "low" | "medium" | "high"
 	Hostname    string   `json:"hostname"`
 	ChallengeTS string   `json:"challenge_ts"`
+	Action      string   `json:"action"`
+	CData       string   `json:"cdata"`
 	ErrorCodes  []string `json:"error-codes"`
 	Reasons     []string `json:"reasons"` // stable reason codes explaining the score
 	Agent       *Agent   `json:"agent"`
@@ -60,7 +62,7 @@ type Feedback struct {
 type Classification struct {
 	OK             bool     `json:"ok"`
 	Score          float64  `json:"score"`
-	Classification string   `json:"classification"` // "GOOD" | "SUSPECT" | "BAD"
+	Classification string   `json:"classification"` // "GOOD" | "NEUTRAL" | "BAD"
 	Reasons        []string `json:"reasons"`
 	Blocked        bool     `json:"blocked"`
 	ErrorCodes     []string `json:"error-codes"`
